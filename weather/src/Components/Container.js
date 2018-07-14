@@ -21,13 +21,26 @@ class Container extends React.Component{
       	})
     	
     }
+    getWeatherByCoordinates= (lat, lon)=>{
+    	console.log(lat,lon);
+    	axios.get(`http://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&APPID=0ed8935ec08da2ab5c2af86e5891c5a4`)
+      	.then(response => {
+
+      		console.log(response)
+      		this.setState({
+
+      			weather:response.data.list
+      		})
+      	})
+
+    }
 
 	render(){
 		console.log(this.state.weather);
 		return(
 
 			<div  className="card-container">
-				<Addcity  city_name={this.getCityWeather}/>
+				<Addcity  city_name={this.getCityWeather} city_coordinates={this.getWeatherByCoordinates}/>
 				<DisplayWeather data={this.state.weather}/>
 				
 			</div>
