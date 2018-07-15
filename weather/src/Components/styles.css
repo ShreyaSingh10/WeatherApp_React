@@ -5,6 +5,7 @@
 	padding: 20px;
 	margin: 20px;
 	border: 2px solid grey;
+	font-size: 10px;
 	
 }
 
@@ -13,5 +14,15 @@
 	flex-direction: row;
 	justify-content: center;
 
+}
+
+.detailsCard{
+	background: pink;
+	text-align: center;
+	padding: 20px;
+	margin: 20px;
+	border: 2px solid grey;
+	height: 300px;
+	width: 200px;
 }
 
