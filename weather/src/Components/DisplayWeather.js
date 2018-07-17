@@ -10,16 +10,14 @@ export default class DisplayWeather extends React.Component {
 		return (
 			<div>
 			{ data &&
-				<div>
-				{data.map((item,index) => ( index<4 &&  
+				<div className="displayWeather">
+				{data.map((item,index) => ( index<8 &&  
 					<Card 
 						key={index.toString()}
 						cardId={index}
 						date_time={item.dt_txt}
 						temp_max={item.main.temp_max} 
 						temp_min={item.main.temp_min} 
-						rain={item.weather[0].main}
-						description={item.weather[0].description}
 						/>
 				))}
 			    </div> 

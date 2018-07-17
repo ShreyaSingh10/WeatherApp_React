@@ -47,10 +47,13 @@ class Addcity extends React.Component{
         console.log("state" , this.state)
 		const { geolocationError } = this.state;
 		return(
+		
 			<div className="entervalues">
+			    <h1> What's with the weather?</h1>
 				<input type="text" onChange={this.handleChange} placeholder="Enter the city name"></input>
-				<button type="submit" onClick={this.handleSubmit}> Go!</button>
-				<button type="submit" onClick={this.getLocation}>Get my location</button>
+				<button id="button_go" type="submit" onClick={this.handleSubmit}> Go!</button>
+				<input type="image" id="button_location" alt="submit" src="https://www.enisa.europa.eu/topics/trainings-for-cybersecurity-specialists/online-training-material/images/whitakergroupgooglelocationicon.png/image"
+				onClick={this.getLocation}></input>
 				<p id="demo"></p>
 				{geolocationError?<div>{geolocationError}</div>:null}
 			</div>

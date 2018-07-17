@@ -34,7 +34,7 @@ class Container extends React.Component{
 		const {weather} = this.state;
 		return(
 			<BrowserRouter>
-				<div>
+				<div className="container">
 					<Route exact path='/' component={ ()=> <Addcity  city_name={this.getWeatherByCity} city_coordinates={this.getWeatherByCoordinates}/> }/>
 					<Route exact path='/' component={ ()=> <DisplayWeather data={weather}/> }/>
 					{<Route exact path='/details/:cardId' component={(props)=> <Details {...props} data={weather}/> }/>}
