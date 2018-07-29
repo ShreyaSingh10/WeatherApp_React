@@ -27,7 +27,6 @@ class Container extends React.Component{
       			weather:response.data.list
       		})
       	})
-
     }
 
 	render(){
@@ -37,15 +36,11 @@ class Container extends React.Component{
 				<div className="container">
 					<Route exact path='/' component={ ()=> <Addcity  city_name={this.getWeatherByCity} city_coordinates={this.getWeatherByCoordinates}/> }/>
 					<Route exact path='/' component={ ()=> <DisplayWeather data={weather}/> }/>
-					{<Route exact path='/details/:cardId' component={(props)=> <Details {...props} data={weather}/> }/>}
+					<Route exact path='/details/:cardId' component={(props)=> <Details {...props} data={weather}/> }/>
 					{/*<Route exact path='/details/:cardId' component={Details}/>*/}
-
-
 				</div>
-
 				{/*<DisplayWeather data={this.state.weather}/>*/}
 			</BrowserRouter>
-			
 		)
 	}
 }

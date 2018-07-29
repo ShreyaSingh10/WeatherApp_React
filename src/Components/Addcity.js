@@ -1,7 +1,5 @@
 import React from "react";
-import './styles.css'
-
-
+import './styles.css';
 
 class Addcity extends React.Component{
 
@@ -13,27 +11,26 @@ class Addcity extends React.Component{
 
     handleChange= e =>{
         const cityname = e.target.value;
-    	this.setState(()=> ({
+    	this.setState({
     		cityname
-    	}))
+    	})
     }
 
     handleSubmit= e =>{
-
     	this.props.city_name(this.state.cityname)
     }
 
     getLocation =()=> {
 	    if (navigator.geolocation) {
 	        navigator.geolocation.getCurrentPosition((position)=>{
-	            console.log(position)
+
 	        	this.setState({
 	        		latitude:position.coords.latitude,
 	        		longitude:position.coords.longitude
-	        	},()=>this.props.city_coordinates(this.state.latitude,this.state.longitude)  
+	        	},()=>this.props.city_coordinates(this.state.latitude,this.state.longitude)
 	        		)
 	        });
-	    } else { 
+	    } else {
 	        this.setState({
 	        	geolocationError:"Geolocation is not supported by this browser."
 	        });
@@ -41,15 +38,15 @@ class Addcity extends React.Component{
 	}
 
 
-  
+
 
 	render(){
         console.log("state" , this.state)
 		const { geolocationError } = this.state;
 		return(
-		
+
 			<div className="entervalues">
-			    <h1> What's with the weather?</h1>
+			    <h1> Whats with the weather?</h1>
 				<input type="text" onChange={this.handleChange} placeholder="Enter the city name"></input>
 				<button id="button_go" type="submit" onClick={this.handleSubmit}> Go!</button>
 				<input type="image" id="button_location" alt="submit" src="https://www.enisa.europa.eu/topics/trainings-for-cybersecurity-specialists/online-training-material/images/whitakergroupgooglelocationicon.png/image"
