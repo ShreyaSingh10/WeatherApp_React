@@ -1,13 +1,10 @@
 import React, { Component } from 'react';
 import './App.css';
-import Container from "./Components/Container"
-import Details from "./Components/Details"
+import Container from './Components/Container';
 
 class App extends Component {
   render() {
-    return (
-      <Container/>
-    )
+    return <Container />;
   }
 }
 
